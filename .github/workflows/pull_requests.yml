@@ -2,6 +2,8 @@ name: Node CI
 
 on: [push]
 
+permissions: read-all
+
 jobs:
   build:
 
@@ -22,3 +24,29 @@ jobs:
         yarn test
       env:
         CI: true
+
+  publish-npm:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: yarn
+      - run: yarn install --immutable
+      - run: yarn build
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.SESAMECARE_OSS_NPM_TOKEN }}
+        run: |
+          yarn dlx semantic-release
