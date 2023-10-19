@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/sesamecare/typia-standalone-validator/compare/v1.0.0...v1.0.1) (2023-10-19)
+
+
+### Bug Fixes
+
+* **cli:** add shebang to run node ([409b242](https://github.com/sesamecare/typia-standalone-validator/commit/409b242cfd127724a928d07134dc730469218162))
+
 # 1.0.0 (2023-10-19)
 
 

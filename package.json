@@ -1,6 +1,6 @@
 {
   "name": "@sesamecare-oss/typia-standalone-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build a standalone validator using Typia and tsup",
   "main": "build/index.js",
   "types": "build/index.d.ts",
