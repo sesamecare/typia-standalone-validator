@@ -97,7 +97,11 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
     await prepend(tmpOutput, '// @ts-nocheck\n');
     await fs.promises.rename(tmpOutput, outputFile);
   } finally {
-    fs.rmSync('__typia__', { recursive: true });
-    fs.rmSync('__typia_out__', { recursive: true });
+    try {
+      fs.rmSync('__typia__', { recursive: true });
+      fs.rmSync('__typia_out__', { recursive: true });
+    } catch (e) {
+      // Ignore
+    }
   }
 }
