@@ -95,7 +95,17 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
 
     const tmpOutput = path.join(path.dirname(outputFile), 'validator.mjs');
     await prepend(tmpOutput, '// @ts-nocheck\n');
-    await fs.promises.rename(tmpOutput, outputFile);
+    if (fs.existsSync(outputFile)) {
+      const existingContent = await fs.promises.readFile(outputFile, 'utf8');
+      const newContent = await fs.promises.readFile(tmpOutput, 'utf8');
+      if (existingContent !== newContent) {
+        await fs.promises.rename(tmpOutput, outputFile);
+      } else {
+        await fs.promises.rm(tmpOutput);
+      }
+    } else {
+      await fs.promises.rename(tmpOutput, outputFile);
+    }
   } finally {
     try {
       fs.rmSync('__typia__', { recursive: true });
