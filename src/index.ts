@@ -38,11 +38,13 @@ export async function generateValidator({
   tsType,
   project,
   outputFile,
+  force,
 }: {
   project: string;
   outputFile: string;
   source: string;
   tsType: string;
+  force?: boolean;
 }) {
   const template = `import typia from 'typia';
 import { ${tsType} } from '../${path.relative(process.cwd(), source)}';
@@ -95,7 +97,7 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
 
     const tmpOutput = path.join(path.dirname(outputFile), 'validator.mjs');
     await prepend(tmpOutput, '// @ts-nocheck\n');
-    if (fs.existsSync(outputFile)) {
+    if (fs.existsSync(outputFile) && !force) {
       const existingContent = await fs.promises.readFile(outputFile, 'utf8');
       const newContent = await fs.promises.readFile(tmpOutput, 'utf8');
       if (existingContent !== newContent) {

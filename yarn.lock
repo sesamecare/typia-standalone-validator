@@ -663,7 +663,7 @@ __metadata:
     "@semantic-release/exec": ^6.0.3
     "@semantic-release/github": ^9.2.3
     "@types/minimist": ^1.2.5
-    "@types/node": ^20.9.2
+    "@types/node": ^20.10.0
     "@typescript-eslint/eslint-plugin": ^6.12.0
     "@typescript-eslint/parser": ^6.12.0
     coconfig: ^1.0.0
@@ -672,7 +672,7 @@ __metadata:
     eslint-import-resolver-typescript: ^3.6.1
     eslint-plugin-import: ^2.29.0
     minimist: ^1.2.8
-    tsup: ^8.0.0
+    tsup: ^8.0.1
     typescript: ^5.3.2
     vitest: ^0.34.6
   peerDependencies:
@@ -768,12 +768,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.9.2":
-  version: 20.9.2
-  resolution: "@types/node@npm:20.9.2"
+"@types/node@npm:*, @types/node@npm:^20.10.0":
+  version: 20.10.0
+  resolution: "@types/node@npm:20.10.0"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 5bbb8fb2248fc5c5c4071d9809fb9af85997677c07124d65665202b53283a3b7bdff26fb844e9ee407e3847dfce6399c2b01e3329ea44a4b720647b1b987c678
+  checksum: face395140d6f2f1755b91fdd3b697cf56aeb9e2514529ce88d56e56f261ad65be7269d863520a9406d73c338699ea68b418e8677584de0c1efeed09539b6f97
   languageName: node
   linkType: hard
 
@@ -4718,9 +4718,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsup@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "tsup@npm:8.0.0"
+"tsup@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "tsup@npm:8.0.1"
   dependencies:
     bundle-require: ^4.0.0
     cac: ^6.7.12
@@ -4753,7 +4753,7 @@ __metadata:
   bin:
     tsup: dist/cli-default.js
     tsup-node: dist/cli-node.js
-  checksum: c39d7f484e1745ab14f38672b925cf1d713bec9f94d50c31aaf8c828a8500efa1f219e6518cdf9e06d74a146872be4591d98ef9aead103909b89d2b07a2f961a
+  checksum: 7b9e7a412247e374be1f22d9aa68eec64e9bdebfdf36ac915fc24be995fc7b855d74cf210431122cec26351e4c22c0b87f0400181b1de1915a80531f4797d84a
   languageName: node
   linkType: hard
 

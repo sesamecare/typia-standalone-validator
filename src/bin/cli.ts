@@ -6,7 +6,9 @@ import { generateValidator } from '..';
 const argv = minimist(process.argv.slice(2), {
   alias: {
     out: ['o', 'output'],
+    force: ['f'],
   },
+  boolean: ['force'],
 });
 
 async function run() {
