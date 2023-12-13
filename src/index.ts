@@ -89,6 +89,8 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
       '__typia_out__/validator.ts',
       '--target',
       'node18',
+      '--config',
+      path.join(__dirname, '../src/tsup.config.ts'),
       '-d',
       path.dirname(outputFile),
       '--format',
