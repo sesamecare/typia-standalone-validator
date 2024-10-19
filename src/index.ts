@@ -97,7 +97,10 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
       'esm',
     ]);
 
-    const tmpOutput = path.join(path.dirname(outputFile), 'validator.mjs');
+    let tmpOutput = path.join(path.dirname(outputFile), 'validator.mjs');
+    if (!fs.existsSync(tmpOutput)) {
+      tmpOutput = path.join(path.dirname(outputFile), 'validator.js');
+    }
     await prepend(tmpOutput, '// @ts-nocheck\n');
     if (fs.existsSync(outputFile) && !force) {
       const existingContent = await fs.promises.readFile(outputFile, 'utf8');
