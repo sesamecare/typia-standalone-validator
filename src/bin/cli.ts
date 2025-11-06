@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import minimist from 'minimist';
 
-import { generateValidator } from '../index';
+import { generateValidator } from '../index.js';
 
 const argv = minimist(process.argv.slice(2), {
   alias: {
