@@ -63,9 +63,9 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
       '__typia__/tsconfig.json',
       `{
     "extends": "${path.relative(path.join(process.cwd(), '__typia__'), project)}",
-    "strict": true,
-    "strictNullChecks":true,
     "compilerOptions": {
+      "strict": true,
+      "strictNullChecks":true,
       "plugins": [{
         "transform": "typia/lib/transform"
       }]
@@ -88,7 +88,7 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
       'tsup',
       '__typia_out__/validator.ts',
       '--target',
-      'node18',
+      'node22',
       '--config',
       path.join(__dirname, '../src/tsup.config.ts'),
       '-d',
