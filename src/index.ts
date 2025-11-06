@@ -66,6 +66,7 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
     "compilerOptions": {
       "strict": true,
       "strictNullChecks":true,
+      "skipLibCheck": true,
       "plugins": [{
         "transform": "typia/lib/transform"
       }]
