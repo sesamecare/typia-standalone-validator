@@ -117,7 +117,7 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
     try {
       fs.rmSync('__typia__', { recursive: true });
       fs.rmSync('__typia_out__', { recursive: true });
-    } catch (e) {
+    } catch {
       // Ignore
     }
   }
