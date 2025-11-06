@@ -2,8 +2,9 @@
   "name": "@sesamecare-oss/typia-standalone-validator",
   "version": "0.0.0",
   "description": "Build a standalone validator using Typia and tsup",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": "./build/index.js",
   "type": "module",
   "author": "Developers <developers@sesamecare.com>",
   "license": "UNLICENSED",
@@ -15,7 +16,7 @@
     "postinstall": "cpconfig",
     "test": "vitest"
   },
-  "bin": "build/bin/cli.js",
+  "bin": "./build/bin/cli.js",
   "keywords": [
     "typescript",
     "sesame"

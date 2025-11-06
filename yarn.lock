@@ -854,7 +854,7 @@ __metadata:
   peerDependencies:
     typia: "*"
   bin:
-    typia-standalone-validator: build/bin/cli.js
+    typia-standalone-validator: ./build/bin/cli.js
   languageName: unknown
   linkType: soft
 
