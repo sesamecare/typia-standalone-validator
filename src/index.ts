@@ -2,8 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-
 async function runCommand(command: string, args: string[] = []) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args);
@@ -75,7 +73,6 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
     }
   }`,
     );
-
     await runCommand('npx', [
       'typia',
       'generate',
@@ -90,14 +87,18 @@ export const validate${tsType} = typia.createValidate<${tsType}>();
     await runCommand('npx', [
       'tsup',
       '__typia_out__/validator.ts',
-      '--target',
-      'node22',
-      '--config',
-      path.join(__dirname, '../src/tsup.config.ts'),
       '-d',
       path.dirname(outputFile),
+      '--platform',
+      'node',
+      '--target',
+      'node22',
       '--format',
       'esm',
+      '--external',
+      'fsevents',
+      '--loader',
+      '.node=file',
     ]);
 
     let tmpOutput = path.join(path.dirname(outputFile), 'validator.mjs');
