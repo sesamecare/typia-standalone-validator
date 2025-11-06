@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
 async function runCommand(command: string, args: string[] = []) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args);
